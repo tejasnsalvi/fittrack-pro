@@ -1,6 +1,8 @@
 import GoalCard from "../../components/dashboard/GoalCard";
 import StatCard from "../../components/dashboard/StatCard";
 import WeekTracker from "../../components/dashboard/WeekTracker";
+import WeekStrip from "../../components/dashboard/WeekStrip";
+import FloatingButton from "../../components/dashboard/FloatingButton";
 
 export default function HomePage() {
   return (
@@ -9,6 +11,8 @@ export default function HomePage() {
         currentWeight={77}
         targetWeight={70}
       />
+
+      <WeekStrip />
 
       <div className="stats-grid">
         <StatCard
@@ -37,6 +41,8 @@ export default function HomePage() {
           target={10000}
         />
       </div>
+
+      <FloatingButton />
 
       <WeekTracker />
     </div>

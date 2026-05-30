@@ -1,3 +1,5 @@
+import { Flame, Zap, Droplets, Footprints } from "lucide-react";
+
 type Props = {
   title: string;
   value: number;
@@ -13,9 +15,23 @@ export default function StatCard({
 }: Props) {
   const percentage = (value / target) * 100;
 
+  const icon =
+    title === "Calories" ? (
+      <Flame size={18} />
+    ) : title === "Protein" ? (
+      <Zap size={18} />
+    ) : title === "Water" ? (
+      <Droplets size={18} />
+    ) : (
+      <Footprints size={18} />
+    );
+
   return (
     <div className="stat-card">
-      <h3>{title}</h3>
+      <div className="card-header">
+        {icon}
+        <span>{title}</span>
+      </div>
 
       <h2>
         {value}
@@ -23,8 +39,8 @@ export default function StatCard({
       </h2>
 
       <small>
-        {target - value}
-        {unit} left
+        {value}/{target}
+        {unit}
       </small>
 
       <div className="mini-progress">
