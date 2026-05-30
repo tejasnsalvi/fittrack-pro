@@ -1,10 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 
-import HomePage from "../pages/Home";
-import FoodPage from "../pages/Food";
-import WorkoutPage from "../pages/Workout";
-import ProfilePage from "../pages/Profile";
-
+import HomePage from "../pages/Home/index";
+import FoodPage from "../pages/Food/index";
+import WorkoutPage from "../pages/Workout/index";
+import ProfilePage from "../pages/Profile/index";
 export default function AppRoutes() {
   return (
     <Routes>
