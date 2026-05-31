@@ -1,19 +1,15 @@
 import Dexie from "dexie";
+import type { Table } from "dexie";
+import type { DailyFoodLog } from "../types/log";
 
 export class FitTrackDB extends Dexie {
-  profile!: Dexie.Table<any, string>;
-  foods!: Dexie.Table<any, string>;
-  workouts!: Dexie.Table<any, string>;
-  logs!: Dexie.Table<any, string>;
+  dailyFoodLogs!: Table<DailyFoodLog>;
 
   constructor() {
     super("FitTrackPro");
 
     this.version(1).stores({
-      profile: "id",
-      foods: "id",
-      workouts: "id",
-      logs: "id,date",
+      dailyFoodLogs: "++id,date",
     });
   }
 }
